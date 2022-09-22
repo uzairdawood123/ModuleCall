@@ -1,0 +1,21 @@
+{
+  "name": "ar-core-react-native",
+  "version": "1.2.4",
+  "summary": "ARCore and ARKit for React native",
+  "homepage": "https://github.com/sin-tag/ar-core-react-native/#readme",
+  "license": "MIT",
+  "authors": "hoangtuyensk@gmail.com",
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source": {
+    "git": "http://d2t.com.vn.git",
+    "tag": "1.2.4"
+  },
+  "source_files": "ios/**/*.{h,m,mm,swift}",
+  "dependencies": {
+    "React-Core": [
+
+    ]
+  }
+}

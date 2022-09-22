@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.vdotok.streaming.views.CallViewRenderer xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/customView"
+    android:layout_width="match_parent"
+    android:layout_height="210dp"
+    app:avatar="@drawable/screen_share"
+    app:borderStrokeColor="@color/light_black"
+    app:borderStrokeWidth="12"
+    app:showViewBorder="true" />
+
+
+

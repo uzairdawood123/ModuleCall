@@ -1,0 +1,6 @@
+module Pods_PracticeProject_PracticeProjectTests {
+  umbrella header "Pods-PracticeProject-PracticeProjectTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

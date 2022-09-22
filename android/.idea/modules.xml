@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PracticeProject.iml" filepath="$PROJECT_DIR$/.idea/modules/PracticeProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/StreamingSDK/PracticeProject.StreamingSDK.iml" filepath="$PROJECT_DIR$/.idea/modules/StreamingSDK/PracticeProject.StreamingSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/StreamingSDK/PracticeProject.StreamingSDK.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/StreamingSDK/PracticeProject.StreamingSDK.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/StreamingSDK/PracticeProject.StreamingSDK.main.iml" filepath="$PROJECT_DIR$/.idea/modules/StreamingSDK/PracticeProject.StreamingSDK.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/StreamingSDK/PracticeProject.StreamingSDK.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/StreamingSDK/PracticeProject.StreamingSDK.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PracticeProject.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PracticeProject.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PracticeProject.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PracticeProject.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PracticeProject.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PracticeProject.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PracticeProject.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PracticeProject.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/callapp/PracticeProject.callapp.iml" filepath="$PROJECT_DIR$/.idea/modules/callapp/PracticeProject.callapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/callapp/PracticeProject.callapp.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/callapp/PracticeProject.callapp.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/callapp/PracticeProject.callapp.main.iml" filepath="$PROJECT_DIR$/.idea/modules/callapp/PracticeProject.callapp.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/callapp/PracticeProject.callapp.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/callapp/PracticeProject.callapp.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/236624386/react-native-gradle-plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/236624386/react-native-gradle-plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/236624386/react-native-gradle-plugin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/236624386/react-native-gradle-plugin.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/236624386/react-native-gradle-plugin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/236624386/react-native-gradle-plugin.test.iml" />
+    </modules>
+  </component>
+</project>

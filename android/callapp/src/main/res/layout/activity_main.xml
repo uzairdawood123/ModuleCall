@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="userModel"
+            type="com.vdotok.icsdks.network.models.responseModels.User" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearActionBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/nameTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Logged in as: "
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fullName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/refreshLogin"
+                app:layout_constraintStart_toEndOf="@id/nameTitle"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Khizzar " />
+
+            <ImageView
+                android:id="@+id/refreshLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/refresh_login"
+                android:tooltipText="Click to Refresh Login"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Khizzar " />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.slidingpanelayout.widget.SlidingPaneLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/sliding_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:foregroundGravity="center_vertical"
+            sothree:layout_constraintBottom_toBottomOf="parent"
+            sothree:layout_constraintEnd_toEndOf="parent"
+            sothree:layout_constraintStart_toStartOf="parent"
+            sothree:layout_constraintTop_toBottomOf="@id/linearActionBar"
+            sothree:umanoPanelHeight="28dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvUserList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="5"
+                tools:listitem="@layout/item_user_contact" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titleString"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_alignParentTop="true"
+                    android:text="swipe left to select users "
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <FrameLayout
+
+                    android:layout_below="@id/titleString"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/views_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:columnCount="2"
+                            android:orientation="vertical" />
+
+                    </ScrollView>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btnMic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="mic" />
+
+                        <Button
+                            android:id="@+id/btnSpeaker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Speaker" />
+
+                        <Button
+                            android:id="@+id/btnPause"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pause" />
+
+                        <Button
+                            android:id="@+id/btnSwitchCam"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Switch" />
+
+                        <Button
+                            android:id="@+id/isMute"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="isMute" />
+
+                        <ToggleButton
+                            android:id="@+id/appAduio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                             />
+
+                    </LinearLayout>
+
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearOneToOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="One-To-One Call: "
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/audioCall"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/call_btn"
+                            android:visibility="visible" />
+
+                        <ImageView
+                            android:id="@+id/videoCall"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/logo_main" />
+
+                        <ImageView
+                            android:id="@+id/endOneToOneCall"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/call_decline"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearManyToMany"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Many-To-Many Call: "
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/m2mAudioCall"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/call_btn"
+                            android:visibility="visible" />
+
+                        <ImageView
+                            android:id="@+id/m2mVideoCall"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/logo_main" />
+
+                        <ImageView
+                            android:id="@+id/endManyToManyCall"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/call_decline"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearOneToMany"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/linearPublicBroadcast"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Public Broadcast: "
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:text="Public Url: "
+                                        android:textColor="@color/black"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/publicUrl"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:ellipsize="end"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black"
+                                        android:textSize="18sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/o2mPublicVideoCall"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginEnd="10dp"
+                                        android:src="@drawable/logo_main" />
+
+                                    <ImageView
+                                        android:id="@+id/endOneToManyPublicCall"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginEnd="10dp"
+                                        android:src="@drawable/call_decline"
+                                        android:visibility="visible" />
+
+                                    <ImageView
+                                        android:id="@+id/o2mPublicScreenShare"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginEnd="10dp"
+                                        android:src="@drawable/screen_share" />
+
+                                    <ImageView
+                                        android:id="@+id/endPublicScreenShareSession"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginEnd="15dp"
+                                        android:src="@drawable/end_session" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginEnd="15dp"
+                                        android:src="@drawable/group_video_call"
+                                        android:text="Multi-Session:"
+                                        android:textColor="@color/black"
+                                        android:textStyle="bold" />
+
+                                    <ImageView
+                                        android:id="@+id/imgMultiSession"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginEnd="30dp"
+                                        android:src="@drawable/group_video_call" />
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearGroupBroadcast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:text="Group Broadcast: "
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/o2mGroupVideoCall"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginEnd="10dp"
+                                    android:src="@drawable/logo_main" />
+
+                                <ImageView
+                                    android:id="@+id/endOneToManyGroupCall"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginEnd="10dp"
+                                    android:src="@drawable/call_decline"
+                                    android:visibility="visible" />
+
+                                <ImageView
+                                    android:id="@+id/o2mGroupScreenShare"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginEnd="10dp"
+                                    android:src="@drawable/screen_share" />
+
+                                <ImageView
+                                    android:id="@+id/endGroupScreenShareSession"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginEnd="15dp"
+                                    android:src="@drawable/end_session" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginEnd="15dp"
+                                    android:src="@drawable/group_video_call"
+                                    android:text="Multi-Session:"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/imgGroupMultiSession"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginEnd="30dp"
+                                    android:src="@drawable/group_video_call" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/endCall"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="30dp"
+                            android:src="@drawable/call_decline"
+                            android:visibility="visible" />
+
+                        <ImageView
+                            android:id="@+id/endScreenSahreSession"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="30dp"
+                            android:src="@drawable/end_session"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/manyToManyVideoCall"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="30dp"
+                        android:src="@drawable/group_video_call"
+                        android:visibility="gone" />
+
+
+                    <ImageView
+                        android:id="@+id/screenShare"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/screen_share"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.slidingpanelayout.widget.SlidingPaneLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

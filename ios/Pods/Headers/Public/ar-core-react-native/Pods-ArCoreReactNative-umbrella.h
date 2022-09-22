@@ -1,0 +1,1 @@
+../../../../../node_modules/ar-core-react-native/ios/Pods/Target Support Files/Pods-ArCoreReactNative/Pods-ArCoreReactNative-umbrella.h

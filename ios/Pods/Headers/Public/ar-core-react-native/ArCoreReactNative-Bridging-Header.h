@@ -1,0 +1,1 @@
+../../../../../node_modules/ar-core-react-native/ios/ArCoreReactNative-Bridging-Header.h

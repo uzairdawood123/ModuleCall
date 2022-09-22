@@ -1,0 +1,1 @@
+../../../../../node_modules/ar-core-react-native/ios/Pods/Target Support Files/SnapKit/SnapKit-umbrella.h

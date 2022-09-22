@@ -1,0 +1,1 @@
+../../../Target Support Files/ar-core-react-native/ar-core-react-native-umbrella.h

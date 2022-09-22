@@ -1,0 +1,6 @@
+module ar_core_react_native {
+  umbrella header "ar-core-react-native-umbrella.h"
+
+  export *
+  module * { export * }
+}

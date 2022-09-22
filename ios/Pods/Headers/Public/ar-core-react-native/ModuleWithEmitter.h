@@ -1,0 +1,1 @@
+../../../../../node_modules/ar-core-react-native/ios/ModuleWithEmitter.h
